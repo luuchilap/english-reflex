@@ -17,17 +17,23 @@ export default function GameOverScreen({ score, maxStreak, lastQuestion, userAns
   const [nameError, setNameError] = useState('');
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKey = (e) => {
       // Bỏ qua nếu người dùng đang gõ tên trong input
-      if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+      if (document.activeElement && document.activeElement.tagName === 'INPUT') {
+        return;
+      }
       
-      if (e.key === 'Enter' || e.code === 'Enter' || e.key === 'Backspace' || e.code === 'Backspace') {
+      const restartKeys = ['Enter', 'Backspace', 'Escape', ' ', 'Delete'];
+      if (restartKeys.includes(e.key) || restartKeys.includes(e.code)) {
         e.preventDefault();
         onRestart();
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+    };
   }, [onRestart]);
 
   const submitScore = async () => {
