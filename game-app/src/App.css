@@ -216,7 +216,7 @@ body {
   padding: 32px;
   background: transparent;
   border-radius: 12px;
-  border: 1px solid #333333;
+  border: none;
 }
 .highlight {
   color: var(--accent-color);
@@ -320,7 +320,7 @@ body {
 
 .explanation-box {
   background: transparent;
-  border: 1px solid #333333;
+  border: none;
   padding: 20px;
   text-align: left;
   border-radius: 12px;
