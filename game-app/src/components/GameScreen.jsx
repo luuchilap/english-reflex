@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Eye, EyeOff } from 'lucide-react';
 import HUD from './HUD';
 
 export default function GameScreen({ 
@@ -9,7 +9,8 @@ export default function GameScreen({
   popKey, 
   onAnswer, 
   onTimeout,
-  isTimerHidden 
+  isTimerHidden,
+  setIsTimerHidden
 }) {
   const [timeLeft, setTimeLeft] = useState(100);
   const [activeBtn, setActiveBtn] = useState(null);
@@ -68,6 +69,25 @@ export default function GameScreen({
     <div key={`game-${currentQuestion.q}`} className="animate-fade-in">
       <HUD score={score} streak={streak} popKey={popKey} />
       
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+        <button 
+          onClick={() => setIsTimerHidden(!isTimerHidden)}
+          style={{ 
+            background: 'transparent', 
+            border: 'none', 
+            color: isTimerHidden ? '#555' : '#888', 
+            cursor: 'pointer', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            transition: 'color 0.2s'
+          }}
+          title="Ẩn/Hiện thời gian"
+        >
+          {isTimerHidden ? <EyeOff size={20} /> : <Eye size={20} />}
+        </button>
+      </div>
+
       <div className="timer-container" style={{ opacity: isTimerHidden ? 0 : 1, transition: 'opacity 0.3s ease' }}>
         <div 
           className={`timer-bar ${timeLeft < 30 ? 'timer-danger' : ''}`} 

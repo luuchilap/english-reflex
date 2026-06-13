@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect } from 'react';
-import { Eye, EyeOff } from 'lucide-react';
 import './App.css';
 import { supabase } from './lib/supabase';
 
@@ -128,10 +127,6 @@ export default function App() {
           <button className={`size-btn ${gameSize === 'small' ? 'active' : ''}`} onClick={() => setGameSize('small')}>S</button>
           <button className={`size-btn ${gameSize === 'medium' ? 'active' : ''}`} onClick={() => setGameSize('medium')}>M</button>
           <button className={`size-btn ${gameSize === 'large' ? 'active' : ''}`} onClick={() => setGameSize('large')}>L</button>
-          <div style={{ width: '1px', background: '#333', margin: '0 4px' }}></div>
-          <button className={`size-btn ${isTimerHidden ? 'active' : ''}`} onClick={() => setIsTimerHidden(!isTimerHidden)} title="Ẩn/Hiện thanh thời gian">
-            {isTimerHidden ? <EyeOff size={16} /> : <Eye size={16} />}
-          </button>
         </div>
       )}
       <div className={`game-container size-${gameSize} ${isShaking ? 'animate-shake' : ''}`}>
@@ -146,6 +141,7 @@ export default function App() {
           onAnswer={handleAnswer}
           onTimeout={handleTimeout}
           isTimerHidden={isTimerHidden}
+          setIsTimerHidden={setIsTimerHidden}
         />
       )}
       
