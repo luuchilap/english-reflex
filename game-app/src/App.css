@@ -462,3 +462,14 @@ hr.divider {
   color: var(--accent-color);
   font-weight: 800;
 }
+
+@keyframes fadeUpOut {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+.score-added {
+  color: var(--true-color);
+  font-weight: 800;
+  font-size: 1.2rem;
+  animation: fadeUpOut 1s forwards cubic-bezier(0.4, 0, 0.2, 1);
+}

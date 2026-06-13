@@ -11,6 +11,7 @@ export default function App() {
   const [screen, setScreen] = useState('start'); // 'start' | 'game' | 'gameover'
   
   const [score, setScore] = useState(0);
+  const [addedPoints, setAddedPoints] = useState(0);
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
   
@@ -56,6 +57,7 @@ export default function App() {
 
   const startGame = useCallback(() => {
     setScore(0);
+    setAddedPoints(0);
     setStreak(0);
     setMaxStreak(0);
     setScreen('game');
@@ -93,7 +95,9 @@ export default function App() {
       if (newStreak > maxStreak) setMaxStreak(newStreak);
       
       const speedBonus = Math.round(timeLeft / 10);
-      setScore(prev => prev + 10 + (newStreak * 2) + speedBonus);
+      const pts = 10 + (newStreak * 2) + speedBonus;
+      setScore(prev => prev + pts);
+      setAddedPoints(pts);
       setPopKey(prev => prev + 1);
       
       handleNextQuestion(availableQuestions);
@@ -136,6 +140,7 @@ export default function App() {
         <GameScreen 
           currentQuestion={currentQuestion}
           score={score}
+          addedPoints={addedPoints}
           streak={streak}
           popKey={popKey}
           onAnswer={handleAnswer}

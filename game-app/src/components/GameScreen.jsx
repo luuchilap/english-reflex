@@ -5,6 +5,7 @@ import HUD from './HUD';
 export default function GameScreen({ 
   currentQuestion, 
   score, 
+  addedPoints,
   streak, 
   popKey, 
   onAnswer, 
@@ -67,7 +68,7 @@ export default function GameScreen({
 
   return (
     <div key={`game-${currentQuestion.q}`} className="animate-fade-in">
-      <HUD score={score} streak={streak} popKey={popKey} />
+      <HUD score={score} addedPoints={addedPoints} popKey={popKey} />
       
       <div style={{ position: 'relative', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div className="timer-container" style={{ margin: 0, opacity: isTimerHidden ? 0 : 1, transition: 'opacity 0.3s ease', width: '100%' }}>
