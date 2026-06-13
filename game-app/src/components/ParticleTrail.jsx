@@ -20,18 +20,17 @@ export default function ParticleTrail() {
     resize();
 
     const handleMouseMove = (e) => {
-      // Create 2-3 yellowish sparks per mouse move
-      const count = Math.random() > 0.5 ? 2 : 3;
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: e.clientX,
-          y: e.clientY,
-          vx: (Math.random() - 0.5) * 3, // scatter left/right
-          vy: (Math.random() - 0.5) * 3 - 1, // slight upward bounce initially
-          life: 1, // opacity 1 to 0
-          size: Math.random() * 2 + 1.5 // 1.5px to 3.5px size
-        });
-      }
+      // Giảm lượng bụi: Chỉ 30% cơ hội tạo ra 1 hạt mỗi khi di chuyển chuột
+      if (Math.random() > 0.3) return;
+      
+      particles.push({
+        x: e.clientX,
+        y: e.clientY,
+        vx: (Math.random() - 0.5) * 2, // bay nhẹ sang 2 bên
+        vy: (Math.random() - 0.5) * 2 - 0.5, // nảy nhẹ lên
+        life: 1, // opacity 1 to 0
+        size: Math.random() * 1.5 + 1 // nhỏ hơn một chút (1px - 2.5px)
+      });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
