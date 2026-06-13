@@ -239,7 +239,7 @@ body {
 /* Khu vực nút bấm Đúng/Sai */
 .control-buttons {
   display: flex;
-  gap: 16px;
+  gap: 32px;
   justify-content: center;
 }
 .btn-game {
