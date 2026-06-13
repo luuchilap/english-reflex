@@ -5,6 +5,7 @@ import { supabase } from './lib/supabase';
 import StartScreen from './components/StartScreen';
 import GameScreen from './components/GameScreen';
 import GameOverScreen from './components/GameOverScreen';
+import ParticleTrail from './components/ParticleTrail';
 
 export default function App() {
   const [screen, setScreen] = useState('start'); // 'start' | 'game' | 'gameover'
@@ -119,6 +120,7 @@ export default function App() {
 
   return (
     <>
+      <ParticleTrail />
       {screen === 'game' && (
         <div className="size-toggle-wrapper">
           <button className={`size-btn ${gameSize === 'small' ? 'active' : ''}`} onClick={() => setGameSize('small')}>S</button>
