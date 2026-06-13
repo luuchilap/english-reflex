@@ -36,11 +36,7 @@ export default function StartScreen({ onStart, isLoading }) {
 
   return (
     <div className="animate-fade-in">
-      <h1 className="title">Sĩ Tử Sinh Tồn</h1>
-      <p className="subtitle">
-        Luyện phản xạ Tiếng Anh THPTQG cực căng.<br />
-        Sai 1 câu = Điêu đứng!
-      </p>
+      <h1 className="title">Luyện phản xạ THPTQG</h1>
       <button className="btn-start" onClick={onStart} disabled={isLoading}>
         {isLoading ? 'Đang Tải Dữ Liệu...' : 'Vào Phòng Thi'}
       </button>

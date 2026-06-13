@@ -71,7 +71,7 @@ export default function GameOverScreen({ score, maxStreak, lastQuestion, userAns
       <div className="explanation-box">
         <strong>
           <AlertCircle size={22} strokeWidth={2.5} />
-          Lỗi sai câu vừa rồi
+          Lỗi
         </strong>
         {lastQuestion && (
           <div className="failed-question">
