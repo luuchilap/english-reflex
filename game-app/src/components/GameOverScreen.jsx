@@ -119,10 +119,10 @@ export default function GameOverScreen({ score, maxStreak, lastQuestion, userAns
       )}
 
       <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
-        <button className="btn-start" onClick={onRestart} style={{ flex: 1, padding: '14px', fontSize: '1rem' }}>
+        <button className="btn-start" onClick={onRestart} style={{ flex: 1, padding: '14px', fontSize: '1rem', borderRadius: '8px' }}>
           Thi Lại
         </button>
-        <button className="btn-start" onClick={onHome} style={{ flex: 1, padding: '14px', fontSize: '1rem', background: 'rgba(255,255,255,0.1)', boxShadow: 'none' }}>
+        <button className="btn-start" onClick={onHome} style={{ flex: 1, padding: '14px', fontSize: '1rem', borderRadius: '8px', background: 'transparent', border: '1px solid #333', color: '#fff' }}>
           Màn Hình Chính
         </button>
       </div>

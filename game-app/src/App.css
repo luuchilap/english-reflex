@@ -240,13 +240,12 @@ body {
 
 /* --- SCREEN: GAME OVER --- */
 .gameover-title {
-  color: var(--false-color);
+  color: var(--danger-color);
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 24px;
   text-transform: uppercase;
   letter-spacing: -1px;
-  text-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
 }
 .result-box {
   background: rgba(0,0,0,0.2);
@@ -277,11 +276,11 @@ body {
 .result-value.highlight-score { color: var(--accent-color); }
 
 .explanation-box {
-  background: rgba(244, 63, 94, 0.1);
-  border: 1px solid rgba(244, 63, 94, 0.2);
+  background: transparent;
+  border: 1px solid #333333;
   padding: 20px;
   text-align: left;
-  border-radius: 16px;
+  border-radius: 12px;
   margin-bottom: 32px;
   font-size: 1.05rem;
   line-height: 1.6;
@@ -290,7 +289,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--false-color);
+  color: var(--danger-color);
   margin-bottom: 12px;
   font-size: 1.1rem;
 }
@@ -302,12 +301,12 @@ body {
   font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 12px;
-  color: white;
+  color: #ffffff;
   line-height: 1.5;
 }
 .user-answer-row {
   font-size: 0.95rem;
-  color: #fb7185; /* light rose */
+  color: #a3a3a3;
   display: flex;
   align-items: center;
 }
@@ -318,13 +317,13 @@ body {
   font-size: 0.85rem;
   margin-left: 6px;
 }
-.ans-badge.true { background: rgba(16, 185, 129, 0.2); color: var(--true-color); border: 1px solid rgba(16, 185, 129, 0.3); }
-.ans-badge.false { background: rgba(244, 63, 94, 0.2); color: var(--false-color); border: 1px solid rgba(244, 63, 94, 0.3); }
-.ans-badge.timeout { background: rgba(245, 158, 11, 0.2); color: var(--accent-color); border: 1px solid rgba(245, 158, 11, 0.3); }
+.ans-badge.true { background: #ffffff; color: #000000; border: 1px solid #ffffff; }
+.ans-badge.false { background: #000000; color: #ffffff; border: 1px solid #ffffff; }
+.ans-badge.timeout { background: #000000; color: var(--accent-color); border: 1px solid var(--accent-color); }
 
 hr.divider {
   border: none;
-  border-top: 1px dashed rgba(244, 63, 94, 0.3);
+  border-top: 1px solid #333333;
   margin: 16px 0;
 }
 
@@ -337,10 +336,10 @@ hr.divider {
 .name-input {
   flex: 1;
   padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(0,0,0,0.2);
-  color: white;
+  border-radius: 8px;
+  border: 1px solid #333333;
+  background: transparent;
+  color: #ffffff;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.2s;
@@ -352,19 +351,17 @@ hr.divider {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: var(--true-color);
-  color: white;
+  background: #ffffff;
+  color: #000000;
   border: none;
   padding: 0 20px;
   font-size: 1rem;
   font-weight: 700;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 4px 0 var(--true-shadow);
 }
 .btn-save:active {
-  transform: translateY(4px);
-  box-shadow: 0 0 0 var(--true-shadow);
+  transform: scale(0.98);
 }
 .btn-save:disabled {
   opacity: 0.5;
