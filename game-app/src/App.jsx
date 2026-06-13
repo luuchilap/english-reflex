@@ -29,7 +29,14 @@ export default function App() {
       try {
         const { data, error } = await supabase.from('questions').select('*');
         if (error) throw error;
-        setAllQuestions(data || []);
+        
+        // Cắt bỏ phần đuôi dư thừa " -> Từ in đậm..." để giao diện tối giản
+        const cleanData = (data || []).map(item => ({
+          ...item,
+          q: item.q.split(' -> ')[0]
+        }));
+        
+        setAllQuestions(cleanData);
         setIsLoading(false);
       } catch (err) {
         console.error("Failed to load questions", err);
