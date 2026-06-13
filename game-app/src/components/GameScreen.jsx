@@ -69,30 +69,33 @@ export default function GameScreen({
     <div key={`game-${currentQuestion.q}`} className="animate-fade-in">
       <HUD score={score} streak={streak} popKey={popKey} />
       
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+      <div style={{ position: 'relative', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="timer-container" style={{ margin: 0, opacity: isTimerHidden ? 0 : 1, transition: 'opacity 0.3s ease', width: '100%' }}>
+          <div 
+            className={`timer-bar ${timeLeft < 30 ? 'timer-danger' : ''}`} 
+            style={{ width: `${timeLeft}%` }}
+          ></div>
+        </div>
+
         <button 
           onClick={() => setIsTimerHidden(!isTimerHidden)}
           style={{ 
-            background: 'transparent', 
+            position: 'absolute',
+            background: 'var(--bg-color)', 
             border: 'none', 
             color: isTimerHidden ? '#555' : '#888', 
             cursor: 'pointer', 
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center',
-            transition: 'color 0.2s'
+            transition: 'all 0.2s',
+            padding: '2px 8px',
+            borderRadius: '12px'
           }}
           title="Ẩn/Hiện thời gian"
         >
-          {isTimerHidden ? <EyeOff size={20} /> : <Eye size={20} />}
+          {isTimerHidden ? <EyeOff size={18} /> : <Eye size={18} />}
         </button>
-      </div>
-
-      <div className="timer-container" style={{ opacity: isTimerHidden ? 0 : 1, transition: 'opacity 0.3s ease' }}>
-        <div 
-          className={`timer-bar ${timeLeft < 30 ? 'timer-danger' : ''}`} 
-          style={{ width: `${timeLeft}%` }}
-        ></div>
       </div>
 
       <div className="question-box">
