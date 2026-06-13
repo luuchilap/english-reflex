@@ -195,7 +195,12 @@ body {
   transition: width 0.1s linear, background-color 0.3s;
 }
 .timer-danger {
-  background: var(--danger-color);
+  background: var(--danger-color) !important;
+  box-shadow: 0 0 10px var(--danger-color);
+}
+.timer-warning {
+  background: var(--accent-color) !important;
+  box-shadow: 0 0 8px var(--accent-color);
 }
 
 /* Khung hiển thị câu hỏi */
