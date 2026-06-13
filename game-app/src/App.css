@@ -240,10 +240,11 @@ body {
 .control-buttons {
   display: flex;
   gap: 16px;
+  justify-content: center;
 }
 .btn-game {
-  flex: 1;
-  padding: 24px 20px;
+  flex: 0 1 140px;
+  padding: 16px 12px;
   font-size: 1.4rem;
   font-weight: 800;
   border-radius: 12px;
