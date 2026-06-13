@@ -244,7 +244,7 @@ body {
 }
 .btn-game {
   flex: 0 1 140px;
-  padding: 16px 12px;
+  padding: 8px 6px;
   font-size: 1.4rem;
   font-weight: 800;
   border-radius: 12px;
