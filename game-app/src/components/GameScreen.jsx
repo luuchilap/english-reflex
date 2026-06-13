@@ -84,14 +84,16 @@ export default function GameScreen({
           onClick={() => handleAnswer(false)}
           aria-label="Sai"
         >
-          <ArrowLeft size={48} strokeWidth={3} />
+          <span style={{ fontSize: '1.2rem', opacity: 1 }}>SAI</span>
+          <ArrowLeft size={40} strokeWidth={3} />
         </button>
         <button 
           className={`btn-game btn-true ${activeBtn === true ? 'active' : ''}`}
           onClick={() => handleAnswer(true)}
           aria-label="Đúng"
         >
-          <ArrowRight size={48} strokeWidth={3} />
+          <span style={{ fontSize: '1.2rem', opacity: 1 }}>ĐÚNG</span>
+          <ArrowRight size={40} strokeWidth={3} />
         </button>
       </div>
     </div>
